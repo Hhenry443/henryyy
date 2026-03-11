@@ -8,20 +8,14 @@ class Dbh
 
   private function __construct()
   {
-    $env = file('/var/www/vhosts/henryyy.com/.env');
-    var_dump($env);
-    exit;
-
-    $envPath = $_SERVER['DOCUMENT_ROOT'] . '/../.env';
+    $envPath = '/var/www/vhosts/henryyy.com/.env';
 
     if (file_exists($envPath)) {
-      $lines = file($envPath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-
-      foreach ($lines as $line) {
-        if (str_starts_with(trim($line), '#')) continue;
+      foreach (file($envPath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES) as $line) {
+        if (strpos(trim($line), '#') === 0) continue;
 
         [$key, $value] = explode('=', $line, 2);
-        $_ENV[$key] = $value;
+        $_ENV[$key] = trim($value);
       }
     }
 
