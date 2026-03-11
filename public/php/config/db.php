@@ -8,6 +8,9 @@ class Dbh
 
   private function __construct()
   {
+    var_dump(file_exists('/var/www/vhosts/henryyy.com/.env'));
+    exit;
+
     $envPath = $_SERVER['DOCUMENT_ROOT'] . '/../.env';
 
     if (file_exists($envPath)) {
