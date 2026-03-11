@@ -8,11 +8,23 @@ class Dbh
 
   private function __construct()
   {
+    $envFile = dirname(__DIR__, 2) . '/.env';
+
+    if (file_exists($envFile)) {
+      $lines = file($envFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+
+      foreach ($lines as $line) {
+        if (str_starts_with(trim($line), '#')) continue;
+
+        [$key, $value] = explode('=', $line, 2);
+        $_ENV[$key] = $value;
+      }
+    }
 
     $this->connection = new PDO(
-      'mysql:host=' . getenv('DB_HOST') . '; dbname=' . getenv('DB_NAME'),
-      getenv('DB_USER'),
-      getenv('DB_PASSWD')
+      'mysql:host=' . $_ENV['DB_HOST'] . '; dbname=' . $_ENV['DB_NAME'],
+      $_ENV['DB_USER'],
+      $_ENV['DB_PASSWD']
     );
 
     $this->connection->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
