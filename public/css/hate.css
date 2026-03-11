@@ -1,0 +1,154 @@
+body {
+  color: #fff;
+  background-color: #fff;
+  background: url("../images/angry.gif");
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 12px;
+}
+
+.back-arrow {
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.hate-form {
+  font-family: inherit;
+  font-size: inherit;
+  display: block;
+  width: 100%;
+  max-width: 700px;
+  height: 100%;
+  max-height: 473px;
+  /*padding-bottom:67.57%;*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background: url("../images/romance.jpg");
+  background-size: cover;
+  /*padding:20px;*/
+  padding: 0;
+  box-sizing: border-box;
+  border-style: outset;
+  border-color: brown;
+  border-width: 5px;
+}
+
+.hate-field {
+  display: block;
+  border: none;
+  width: 40%;
+  height: 90%;
+  margin-top: 10%;
+  margin-left: 3%;
+}
+
+.hate-field legend {
+  font-size: 1.4em;
+  letter-spacing: 0.4em;
+  font-weight: bold;
+  color: #ccc;
+  margin-bottom: 4%;
+}
+
+.hate-field a {
+  text-decoration: none;
+  color: #ccc;
+}
+
+#answer {
+  width: 100%;
+  box-sizing: border-box;
+  height: 24%;
+  margin-bottom: 3%;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+#name-input,
+#email-input {
+  width: 49%;
+}
+
+#name-input {
+  float: left;
+}
+#email-input {
+  float: right;
+}
+
+.hate-form input[type="text"] {
+  box-sizing: border-box;
+  width: 100%;
+  font-size: inherit;
+}
+
+.hate-form label {
+  display: block;
+  font-size: 10px;
+}
+
+.final-button {
+  float: right;
+  background-color: transparent;
+  color: #fff;
+  font-size: 11px;
+  font-weight: bold;
+  margin-top: 3%;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .hate-form {
+    background: none;
+
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+
+    width: 100%;
+    max-width: none;
+    height: auto;
+    max-height: none;
+
+    min-height: 100vh;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  .hate-field {
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
+  .hate-field legend {
+    font-size: 1.1em;
+    letter-spacing: 0.25em;
+    margin-bottom: 1rem;
+  }
+
+  #answer {
+    height: 120px;
+  }
+
+  #name-input,
+  #email-input {
+    width: 100%;
+    float: none;
+    margin-bottom: 0.5rem;
+  }
+
+  .final-button {
+    float: none;
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+    font-size: 12px;
+    text-align: right;
+  }
+}
