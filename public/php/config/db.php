@@ -8,10 +8,10 @@ class Dbh
 
   private function __construct()
   {
-    $envFile = dirname(__DIR__, 2) . '/.env';
+    $envPath = $_SERVER['DOCUMENT_ROOT'] . '/../.env';
 
-    if (file_exists($envFile)) {
-      $lines = file($envFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    if (file_exists($envPath)) {
+      $lines = file($envPath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
       foreach ($lines as $line) {
         if (str_starts_with(trim($line), '#')) continue;
