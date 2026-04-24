@@ -23,7 +23,7 @@
     </a>
     <form id="frmHate" name="frmHate" action="/php/index.php?action=submitHate" method="POST" class="hate-form" onSubmit="return warning()">
         <fieldset class="hate-field">
-            <legend>I HATE <a href="/">HENRY</a></legend>
+            <legend>I HATE <a href="/">HENRY!</a></legend>
             <label for="answer" class="input-label">Why do you hate Henry?</label>
             <textarea id="answer" name="answer"></textarea>
 

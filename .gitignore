@@ -1,2 +1,6 @@
 .ddev
 /node_modules
+
+ideas.txt
+
+.gitignore
